@@ -26,17 +26,18 @@ def convert_pdf_to_txt(path):
     fp.close()
     device.close()
     retstr.close()
+
     return text
 
 
 for filename in os.listdir("."):
-    # print filename[-3:]
+
     if filename[-3:]=="pdf":
-        # print filename
-        # continue
         print "writting...",filename[:-4]
         text = convert_pdf_to_txt(filename)
+
         f = open(filename[:-3]+"txt","w+")
         f.write(text)
         f.close()
+
         print "written",filename

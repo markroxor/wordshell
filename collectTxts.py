@@ -1,15 +1,12 @@
-import sys,os
-
-filenames = []
+import os
 
 wordlines = []
 for filename in os.listdir("."):
-	# print filename[-3:]
+
 	if filename[-3:]=="txt":
 		f = open(str(filename))
 		lines = f.read().splitlines()
 		f.close()
-
 
 		for i in xrange(len(lines)):
 			st = ""
